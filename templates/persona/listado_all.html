@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include "includes/header.html"%}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Lista empleados</h1>
+        <div class="cell grid-x grid-margin-x">
+            <div class="cell large-7">
+                <input type="text" placeholder="buscar empleado">
+
+            </div> 
+            <div class="cell large-2">
+                <button type="button" class="success button">Buscar</button>
+            </div>
+        </div>
+        <div class="cell">
+            <table>
+                <thead>
+                  <tr>
+                    <th width="200">ID</th>
+                    <th>NOMBRES</th>
+                    <th width="150">APELLIDOS</th>
+                    <th width="150">DEPARTAMENTO</th>
+                    <th width="150"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  {% for e in  lista %}
+                  <tr>
+                    <td>{{e.id}}</td>
+                    <td>{{e.first_name}}</td>
+                    <td>{{e.last_name}}</td>
+                    <td>{{e.departamento}}</td>
+                    <td><a class="button warning" href="#">ver</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+{% endblock content %}

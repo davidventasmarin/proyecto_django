@@ -1,0 +1,6 @@
+<h1>Añadir persona</h1>
+
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Añadir Usuario</button>
+</form>

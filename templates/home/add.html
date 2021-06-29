@@ -1,0 +1,8 @@
+<h1>Hoja para añadir registros</h1>
+
+<form method="POST">{% csrf_token %} 
+    {{form.as_p}}
+    <button type="submit">Guardar</button>
+</form>
+
+
